@@ -103,7 +103,7 @@ const RegisterForm = () => {
       </View>
       <View style={styles.buttonContainer}>
         <Button
-          loading={Loading ? true : flase}
+          loading={Loading ? true : false}
           title="Register"
           color="#03989E"
           buttonStyle={styles.RegisterButton}
