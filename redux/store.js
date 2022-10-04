@@ -13,6 +13,7 @@ import {
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import UserReducer from "./Reducer/UserReducer";
+import Appointment from "./Reducer/Appointment";
 
 
 const persistConfig = {
@@ -22,6 +23,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   user: UserReducer,
+  appointment: Appointment
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

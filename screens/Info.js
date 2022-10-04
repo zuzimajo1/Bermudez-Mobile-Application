@@ -5,33 +5,25 @@ import {
   SafeAreaView,
   TextInput,
   ScrollView,
-  Image
+  Image,
 } from 'react-native'
 import React from 'react'
 import { Button } from '@rneui/themed'
 import { useDispatch } from 'react-redux'
-import { LogoutUser } from '../redux/Reducer/UserReducer'
+import { Header, InfoAbout } from '../components'
 
-export default Home = () => {
+const Info = () => {
   return (
     <SafeAreaView style={styles.main}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <Header text="Info"/>
         <View style={styles.wrapper}>
-          <Text style={styles.mainTitle}>welcome</Text>
-          <Text style={styles.submainTitle}>Bermudez Medical Clinic</Text>
-          <ClinicImage />
+          <InfoAbout/>
         </View>
-      </ScrollView>
     </SafeAreaView>
   )
 }
 
-const ClinicImage = () => (
-  <Image
-    style={styles.image}
-    source={require('../assets/images/Clinic.jpg')}
-  ></Image>
-)
+export default Info
 
 const styles = StyleSheet.create({
   main: {
@@ -44,7 +36,7 @@ const styles = StyleSheet.create({
     height: '100%',
     alignItems: 'center',
     marginTop: 40,
-    paddingHorizontal: 30,
+    paddingHorizontal: 10,
   },
   mainTitle: {
     fontSize: 38,
@@ -90,6 +82,7 @@ const styles = StyleSheet.create({
     height: 36,
     backgroundColor: 'white',
   },
+
   normalText: {
     color: 'white',
     fontSize: 13,
@@ -110,9 +103,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginTop: 10,
   },
-  image:{
+  image: {
     width: 300,
     height: 270,
-    borderRadius: 20,
-  }
+  },
 })

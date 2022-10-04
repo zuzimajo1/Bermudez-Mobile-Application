@@ -48,10 +48,7 @@ const LoginForm = ({ navigation }) => {
     setLoading(true)
     if (username && password) {
       try {
-        const res = await PublicRequest.post('auth/login', {
-          username,
-          password,
-        })
+        const res = await PublicRequest.get(`auth?username=${username}&password=${password}`)
         setLoading(false);
         dispatch(LoginUser(res.data))
       } catch (err) {
