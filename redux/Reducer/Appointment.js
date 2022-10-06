@@ -23,6 +23,9 @@ const AppointmentReducer = createSlice({
         },
         UpdateAppointment : (state,action)=>{
             state.appointment[state.appointment.findIndex((items)=> items.id === action.payload.id)] = action.payload
+        },
+        LogoutAppointment: (state)=>{
+            state.appointment = [];
         }
     }
 })
@@ -33,6 +36,7 @@ export const {
   AddAppointment,
   DeleteAppointment,
   UpdateAppointment,
+  LogoutAppointment,
 } = AppointmentReducer.actions
 
 export default AppointmentReducer.reducer;

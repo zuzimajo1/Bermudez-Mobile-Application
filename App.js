@@ -52,7 +52,7 @@ const AppWrapper = ({ Stack, screenOptions }) => {
   return (
     <PersistGate loading={null} persistor={persistor}>
       <SafeAreaProvider>
-        <NavigationContainer>
+        <NavigationContainer onReady={() => RNBootSplash.hide()}>
           <Stack.Navigator
             initialRouteName="Main"
             screenOptions={screenOptions}

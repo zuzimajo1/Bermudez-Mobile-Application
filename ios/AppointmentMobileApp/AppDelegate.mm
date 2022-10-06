@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-// #import "RNBootSplash.h"
+#import "RNBootSplash.h" //this is bootsplash
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -55,7 +55,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-  // [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
+  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView]; //this is bootsplash
   
   return YES;
 }

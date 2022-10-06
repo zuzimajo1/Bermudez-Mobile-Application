@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   Image,
 } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from '@rneui/themed'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import { useDispatch } from 'react-redux'
@@ -42,7 +42,16 @@ const LoginForm = ({ navigation }) => {
   const [password, setPassword] = useState()
   const [ShowPass, setShowPass] = useState(false)
   const [Loading, setLoading] = useState(false);
-  const dispatch = useDispatch()
+  const [Omited, setOmited] = useState(false);
+  const dispatch = useDispatch();
+
+
+   useEffect(() => {
+     const IntervalButton = setInterval(() => {
+       setOmited(false)
+     }, 1000)
+     return () => clearInterval(IntervalButton)
+   }, [Omited])
 
   const HandleButtonLogin = async () => {
     setLoading(true)
@@ -52,11 +61,13 @@ const LoginForm = ({ navigation }) => {
         setLoading(false);
         dispatch(LoginUser(res.data))
       } catch (err) {
-         setLoading(false)
+        setOmited(true);
+        setLoading(false)
         console.log("Please don't omit any details")
       }
     } else {
-         setLoading(false)
+        setOmited(true);
+         setLoading(false);
       console.log("Please don't omit any details")
     }
   }
@@ -90,13 +101,13 @@ const LoginForm = ({ navigation }) => {
         <Button
           loading={Loading ? true : false}
           title="Login"
-          color="#008037"
+          color={ Omited ? '#EC5442' : '#008037' }
           buttonStyle={styles.LoginButton}
           onPress={HandleButtonLogin}
         />
         <Button
           title="Create Account"
-          color="#03989E"
+          color='#03989E'
           buttonStyle={styles.RegisterButton}
           onPress={() => navigation.navigate('Register')}
         />

@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, SafeAreaView, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import { Button } from '@rneui/themed'
 import { useDispatch } from 'react-redux'
@@ -26,8 +26,17 @@ const LoginCredentials = ({ route }) => {
   const [password, setPassword] = useState()
   const [confirmpass, setconfirmpass] = useState()
   const [ShowPass, setShowPass] = useState(false)
-  const [Loading, setLoading] = useState(false)
+  const [Loading, setLoading] = useState(false);
+  const [Omited, setOmited] = useState(false);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const IntervalButton = setInterval(() => {
+      setOmited(false)
+    }, 1000)
+    return () => clearInterval(IntervalButton)
+  }, [Omited])
+
   const HandleButtonRegister = async () => {
     setLoading(true)
     if (username && password && confirmpass) {
@@ -40,7 +49,7 @@ const LoginCredentials = ({ route }) => {
             username,
             password,
             birthday: route.params.birthday,
-            img: 'data:image/jpeg;base64,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',
+            img: 'https://firebasestorage.googleapis.com/v0/b/letterme-eb1d3.appspot.com/o/files%2Fuser.jpg?alt=media&token=b4b95e14-cad5-494f-b6c6-8e9c5f419c5a',
             sex: route.params.sex,
             address: route.params.Address,
             occupation: route.params.Occupation,
@@ -52,14 +61,17 @@ const LoginCredentials = ({ route }) => {
           dispatch(RegisterUser(res.data))
         } catch (error) {
           setLoading(false)
+           setOmited(true)
           console.log(error)
         }
       } else {
         setLoading(false)
+         setOmited(true)
         console.log('Password does not match')
       }
     } else {
       setLoading(false)
+      setOmited(true);
       console.log("Please don't omit any details")
     }
   }
@@ -100,7 +112,7 @@ const LoginCredentials = ({ route }) => {
         <Button
           loading={Loading ? true : false}
           title="Register"
-          color="#03989E"
+          color={Omited ?  '#EC5442' : "#03989E"}
           buttonStyle={styles.RegisterButton}
           onPress={HandleButtonRegister}
         />

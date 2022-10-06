@@ -3,7 +3,7 @@ package com.appointmentmobileapp;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
-// import com.zoontek.rnbootsplash.RNBootSplash; // <- add this necessary import
+import com.zoontek.rnbootsplash.RNBootSplash; // <- add this necessary import
 
 public class MainActivity extends ReactActivity {
 
@@ -32,12 +32,12 @@ public class MainActivity extends ReactActivity {
       super(activity, mainComponentName);
     }
 
-    //This is bootsplash
-    //  @Override
-    //   protected void loadApp(String appKey) {
-    //   RNBootSplash.init(getPlainActivity()); // <- initialize the splash screen
-    //   super.loadApp(appKey);
-    // }
+    // This is bootsplash
+     @Override
+      protected void loadApp(String appKey) {
+      RNBootSplash.init(getPlainActivity()); // <- initialize the splash screen
+      super.loadApp(appKey);
+    }
 
   
 
