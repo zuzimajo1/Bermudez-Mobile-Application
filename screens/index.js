@@ -9,3 +9,4 @@ export { default as Info } from "./Info";
 export { default as List } from "./List";
 export { default as ListAdmin } from "./ListAdmin";
 export { default as AppointmentDone } from "./AppointmentDone";
+export { default as ViewAppointment } from "./ViewAppointment";

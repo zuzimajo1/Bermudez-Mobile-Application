@@ -29,6 +29,7 @@ import {
   Main,
   Register,
   Register2,
+  ViewAppointment,
 } from './screens'
 import { useSelector } from 'react-redux'
 import RNBootSplash from 'react-native-bootsplash'
@@ -64,13 +65,16 @@ const AppWrapper = ({ Stack, screenOptions }) => {
                   name="AppointmentDone"
                   component={AppointmentDone}
                 />
+                <Stack.Screen
+                  name="ViewAppointment"
+                  component={ViewAppointment}
+                />
               </>
             ) : (
               <>
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="Register" component={Register} />
                 <Stack.Screen name="Register2" component={Register2} />
-                
               </>
             )}
           </Stack.Navigator>

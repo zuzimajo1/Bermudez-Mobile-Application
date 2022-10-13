@@ -14,29 +14,35 @@ const SingleAppointmentAdmin = ({
   AppointmentDate,
   createdAt,
   AppointmentStatus,
-  id
+  id,
+  navigation,
 }) => {
-
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   const Formatdate = (date) => {
     return dayjs(date).format('MMMM D, YYYY')
   }
 
-  const HandleButtonApprove = ()=>{
-    const user = {id, ClientFirstname, ClientMiddlename, ClientLastname, Address, AppointmentDate, createdAt, AppointmentStatus: 'Approved', id};
-    ChangeStatusApproved(dispatch, user)
+ 
+
+  const HandleButtonView = () => {
+    const user = {
+      ClientFirstname,
+      ClientMiddlename,
+      ClientLastname,
+      Address,
+      AppointmentDate,
+      createdAt,
+      AppointmentStatus,
+      id,
+    }
+    navigation.navigate('ViewAppointment', user)
+
   }
 
-  const HandleButtonDeny = ()=>{
-    const user = {id, ClientFirstname, ClientMiddlename, ClientLastname, Address, AppointmentDate, createdAt, AppointmentStatus: 'Denied', id};
-    ChangeStatusApproved(dispatch, user)
+  const HandleButtonDelete = () => {
+    DeleteAppointmentByUser(dispatch, id)
   }
-
-  const HandleButtonDelete = ()=>{
-    DeleteAppointmentByUser(dispatch, id);
-  }
-
 
   return (
     <View style={styles.main}>
@@ -80,41 +86,22 @@ const SingleAppointmentAdmin = ({
           </Text>
         </Text>
       </View>
-      {AppointmentStatus === 'Pending' ? (
-        <View style={styles.cancelwrapper}>
-          <Button
-            title="Approve"
-            type="clear"
-            buttonStyle={{ width: 80 }}
-            titleStyle={styles.buttonApprove}
-            onPress={HandleButtonApprove}
-          />
-          <Button
-            title="Deny"
-            type="clear"
-            buttonStyle={{ width: 80 }}
-            titleStyle={styles.buttonDeny}
-            onPress={HandleButtonDeny}
-          />
-          <Button
-            title="Delete"
-            type="clear"
-            buttonStyle={{ width: 80 }}
-            titleStyle={styles.buttonDelete}
-            onPress={HandleButtonDelete}
-          />
-        </View>
-      ) : (
-        <View style={styles.cancelwrapper}>
-          <Button
-            title="Delete"
-            type="clear"
-            buttonStyle={{ width: 80 }}
-            titleStyle={styles.buttonDelete}
-            onPress={HandleButtonDelete}
-          />
-        </View>
-      )}
+      <View style={styles.cancelwrapper}>
+        <Button
+          title="View"
+          type="clear"
+          buttonStyle={{ width: 80 }}
+          titleStyle={styles.buttonApprove}
+          onPress={HandleButtonView}
+        />
+        <Button
+          title="Delete"
+          type="clear"
+          buttonStyle={{ width: 80 }}
+          titleStyle={styles.buttonDelete}
+          onPress={HandleButtonDelete}
+        />
+      </View>
     </View>
   )
 }

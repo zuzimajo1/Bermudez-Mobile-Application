@@ -22,12 +22,13 @@ export const DeleteAppointmentByUser = async (dispatch, id) => {
   }
 }
 
-export const ChangeStatusApproved = async (dispatch, user)=>{
+export const ChangeStatusApproved = async (setStatus, dispatch, user) => {
   try {
-    const res = await PublicRequest.patch(`appointment?id=${user.id}`, user);
+    const res = await PublicRequest.patch(`appointment?id=${user.id}`, user)
     dispatch(UpdateAppointment(user))
+    setStatus(user.AppointmentStatus)
   } catch (error) {
-      console.log(error.response.data)
+    console.log(error.response.data)
   }
 }
 

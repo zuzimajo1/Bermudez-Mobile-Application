@@ -1,11 +1,8 @@
 import { StyleSheet, Text, View, SafeAreaView, TextInput } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import { Button } from '@rneui/themed'
-
-
-import { PublicRequest } from '../RequestMethod'
 import { Dropdown } from 'react-native-element-dropdown'
-import dayjs from "dayjs";
+
 
 const Register = ({ navigation }) => {
   return (

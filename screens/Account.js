@@ -1,15 +1,9 @@
 import {
   StyleSheet,
-  Text,
   View,
   SafeAreaView,
-  TextInput,
-  ScrollView,
-  Image,
 } from 'react-native'
 import React from 'react'
-import { Button } from '@rneui/themed'
-import { useDispatch } from 'react-redux'
 import { AccountDataContent, Header } from '../components'
 
 const Account = () => {
@@ -38,5 +32,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 30,
   },
- 
 })
