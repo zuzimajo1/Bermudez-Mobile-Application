@@ -15,8 +15,9 @@ export default Home = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.wrapper}>
           <Text style={styles.mainTitle}>welcome</Text>
-          <Text style={styles.submainTitle}>Bermudez Medical Clinic</Text>
           <ClinicImage />
+          <Text style={styles.submainTitle}>Bermudez Medical Clinic</Text>
+          <Text style={styles.address}>Barangay San Isidro, Placer, SDN</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -48,13 +49,21 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     fontWeight: '700',
     textAlign: 'center',
+    paddingBottom: 15,
   },
   submainTitle: {
     textAlign: 'center',
-    fontSize: 19,
+    fontSize: 23,
     paddingVertical: 10,
+    textTransform: 'uppercase',
+    fontWeight: 'bold',
+    marginTop: 15,
   },
-
+  address:{
+    fontSize: 17,
+    textAlign: 'center',
+   
+  },
   image:{
     width: 300,
     height: 270,

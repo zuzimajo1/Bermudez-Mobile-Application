@@ -48,7 +48,7 @@ const SingleAppointmentAdmin = ({
     <View style={styles.main}>
       <View style={styles.wrapperClients}>
         <Text>
-          Clientname:{' '}
+          Patient's Name:{' '}
           <Text
             style={styles.textbold}
           >{`${ClientFirstname} ${ClientMiddlename.slice(

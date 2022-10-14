@@ -87,7 +87,7 @@ const ViewAppointment = ({ navigation, route }) => {
         <View style={styles.clientwrapper}>
           <Text
             style={styles.normaltext}
-          >{`Name: ${ClientFirstname} ${ClientMiddlename.slice(
+          >{`Patient's Name: ${ClientFirstname} ${ClientMiddlename.slice(
             0,
             1
           )}. ${ClientLastname} `}</Text>
@@ -100,7 +100,7 @@ const ViewAppointment = ({ navigation, route }) => {
           <Text style={styles.normaltext}>Appointment Status: {Status}</Text>
         </View>
         <View style={styles.clientwrapper}>
-          <Text style={styles.clientInfoTitle}>client information</Text>
+          <Text style={styles.clientInfoTitle}>patient's information</Text>
           <Text style={styles.normaltext}>Address: {Info[0]?.address}</Text>
           <Text style={styles.normaltext}>Birthday: {Info[0]?.birthday}</Text>
           <Text style={styles.normaltext}>Sex: {Info[0]?.sex}</Text>
