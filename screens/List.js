@@ -47,7 +47,7 @@ const List = () => {
   if (datas.length === 0) {
     return (
       <SafeAreaView style={styles.main}>
-        <Header text="List of Appointments" />
+        <Header text='Your Appointment'/>
         <ScrollView
           style={{ width: '100%' }}
           showsVerticalScrollIndicator={false}
@@ -59,7 +59,7 @@ const List = () => {
           }
         >
           <View style={styles.wrapper2}>
-            <Text style={styles.noAppointmentText}>No appointments</Text>
+            <Text style={styles.noAppointmentText}>No Appointment</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -68,7 +68,7 @@ const List = () => {
  return (
    <SafeAreaView style={styles.main}>
      <Header
-       text={datas.length > 1 ? 'Your appointments' : 'Your appointment'}
+       text={datas.length > 1 ? 'Your Appointments' : 'Your Appointment'}
      />
      <ScrollView
        style={{ width: '100%' }}

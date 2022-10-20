@@ -63,7 +63,7 @@ const ListAdmin = ({navigation}) => {
   return (
     <SafeAreaView style={styles.main}>
       <Header
-        text={datas.length > 1 ? 'List of appointments' : 'List of appointment'}
+        text={datas.length > 1 ? 'List of Appointments' : 'List of Appointment'}
       />
       <ScrollView
         style={{ width: '100%' }}

@@ -81,46 +81,60 @@ const ViewAppointment = ({ navigation, route }) => {
         </TouchableOpacity>
       </View>
       <View style={styles.wrapper}>
-        <View style={styles.backwrapper}>
-          <Text style={styles.appointmentNo}>Appointment no: {id}</Text>
-        </View>
         <View style={styles.clientwrapper}>
-          <Text
-            style={styles.normaltext}
-          >{`Patient's Name: ${ClientFirstname} ${ClientMiddlename.slice(
-            0,
-            1
-          )}. ${ClientLastname} `}</Text>
-          <Text style={styles.normaltext}>{`Appointment Date: ${Formatdate(
-            AppointmentDate
-          )}`}</Text>
-          <Text style={styles.normaltext}>{`Created On: ${Formatdate(
-            createdAt
-          )}`}</Text>
-          <Text style={styles.normaltext}>Appointment Status: {Status}</Text>
+          <Text style={styles.normaltext}>
+            <Text style={styles.boldtext}>Patient's Name: </Text>
+            {`${ClientFirstname} ${ClientMiddlename.slice(
+              0,
+              1
+            )}. ${ClientLastname} `}
+          </Text>
+          <Text style={styles.normaltext}>
+            <Text style={styles.boldtext}>Appointment Date: </Text>
+            {Formatdate(AppointmentDate)}
+          </Text>
+          <Text style={styles.normaltext}>
+            <Text style={styles.boldtext}>Created On: </Text>
+            {Formatdate(createdAt)}
+          </Text>
+          <Text style={styles.normaltext}>
+            <Text style={styles.boldtext}>Appointment Status: </Text>
+            {Status}
+          </Text>
         </View>
         <View style={styles.clientwrapper}>
           <Text style={styles.clientInfoTitle}>patient's information</Text>
-          <Text style={styles.normaltext}>Address: {Info[0]?.address}</Text>
-          <Text style={styles.normaltext}>Birthday: {Info[0]?.birthday}</Text>
-          <Text style={styles.normaltext}>Sex: {Info[0]?.sex}</Text>
           <Text style={styles.normaltext}>
-            Occupation: {Info[0]?.occupation}
+            <Text style={styles.boldtext}>Address: </Text> {Info[0]?.address}
           </Text>
           <Text style={styles.normaltext}>
-            Nearest Kin: {Info[0]?.nearestKin}
+            <Text style={styles.boldtext}>Birthday: </Text> {Info[0]?.birthday}
           </Text>
           <Text style={styles.normaltext}>
-            Occupation: {Info[0]?.occupation2}
+            <Text style={styles.boldtext}>Sex: </Text>
+            {Info[0]?.sex}
           </Text>
           <Text style={styles.normaltext}>
-            Relationship: {Info[0]?.relationship}
+            <Text style={styles.boldtext}>Occupation: </Text>
+            {Info[0]?.occupation}
+          </Text>
+          <Text style={styles.normaltext}>
+            <Text style={styles.boldtext}>Nearest Kin: </Text>
+            {Info[0]?.nearestKin}
+          </Text>
+          <Text style={styles.normaltext}>
+            <Text style={styles.boldtext}>Occupation: </Text>
+            {Info[0]?.occupation2}
+          </Text>
+          <Text style={styles.normaltext}>
+            <Text style={styles.boldtext}>Relationship: </Text>
+            {Info[0]?.relationship}
           </Text>
         </View>
         {Status === 'Pending' && (
           <View style={styles.statusButton}>
             <Button
-              title="Approved"
+              title="Approve"
               type="clear"
               buttonStyle={{ width: 120 }}
               titleStyle={styles.buttonApprove}
@@ -160,12 +174,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonApprove: {
-    color: '#1568E7',
+    color: 'green',
     fontSize: 20,
     fontWeight: 'bold',
   },
   buttonDeny: {
-    color: '#CB2811',
+    color: 'red',
     fontSize: 20,
     fontWeight: 'bold',
   },
@@ -199,6 +213,10 @@ const styles = StyleSheet.create({
   normaltext: {
     fontSize: 18,
   },
+  boldtext:{
+    fontSize: 18,
+    fontWeight: '700',
+  },
   clientwrapper: {
     width: '100%',
     alignItems: 'flex-start',
@@ -208,6 +226,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     fontSize: 18,
     fontWeight: '700',
+    alignSelf: 'center'
   },
   wrapper: {
     width: '100%',
