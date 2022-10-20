@@ -17,8 +17,9 @@
 <ul>
     <li>The patient can set appointment</li>
     <li>The patient can see his/her appointment on list</li>
-    <li>The admin can approve or deny the appointment</li>
     <li>The admin can see the list of all appointment of the patients</li>
+    <li>The admin can approve or deny the appointment</li>
+    
 </ul>
 
 ## 🖼️ Preview
