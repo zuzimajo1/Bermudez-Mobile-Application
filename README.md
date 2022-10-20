@@ -1,6 +1,6 @@
 <h1 align="center">Bermudez Mobile Application</h1>
 
-<h2 align="center">Bermudez Mobile Application is an application that was deploy in Bermudez Medical Clinic located at Brgy. San Isidro, Placer, SDN.</h2>
+<h2 align="center">Bermudez Mobile Application is an application that was deployed in Bermudez Medical Clinic located at Brgy. San Isidro, Placer, SDN.</h2>
 
 ## ⚒️ Built with the following technologies:
 
